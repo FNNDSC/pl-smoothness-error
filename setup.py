@@ -1,25 +1,25 @@
-from os import path
 from setuptools import setup
 
-with open(path.join(path.dirname(path.abspath(__file__)), 'README.md')) as f:
-    readme = f.read()
-
 setup(
-    name='smoothness_error',
+    name='chris-plugin-template',
     version='1.0.0',
-    description='Calculate vertex-wise smoothness error of a .obj surface mesh',
-    long_description=readme,
-    author='Jennings Zhang',
-    author_email='Jennings.Zhang@childrens.harvard.edu',
-    url='https://github.com/FNNDSC/pl-smoothness-error',
-    packages=['smoothness_error'],
-    install_requires=['chrisapp', 'pybicpl'],
+    description='A ChRIS DS plugin template',
+    author='FNNDSC',
+    author_email='dev@babyMRI.org',
+    url='https://github.com/FNNDSC/python-chrisapp-template',
+    py_modules=['app'],
+    install_requires=['chris_plugin'],
     license='MIT',
-    zip_safe=False,
-    python_requires='>=3.8',
+    python_requires='>=3.8.2',
     entry_points={
         'console_scripts': [
-            'smoothness_error = smoothness_error.__main__:main'
+            'commandname = app:main'
         ]
-    }
+    },
+    classifiers=[
+        'License :: OSI Approved :: MIT License',
+        'Topic :: Scientific/Engineering',
+        'Topic :: Scientific/Engineering :: Bio-Informatics',
+        'Topic :: Scientific/Engineering :: Medical Science Apps.'
+    ]
 )

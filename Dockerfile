@@ -1,7 +1,13 @@
-FROM docker.io/fnndsc/pybicpl:v0.2.0-2
-LABEL maintainer="Jennings Zhang <Jennings.Zhang@childrens.harvard.edu>"
+# Python version can be changed, e.g.
+# FROM python:3.8
+# FROM docker.io/fnndsc/conda:python3.10.2-cuda11.6.0
+FROM docker.io/python:3.10.2-slim-buster
 
-WORKDIR /usr/local/src/pl-smoothness-error
+LABEL org.opencontainers.image.authors="FNNDSC <dev@babyMRI.org>" \
+      org.opencontainers.image.title="ChRIS Plugin Title" \
+      org.opencontainers.image.description="A ChRIS plugin that..."
+
+WORKDIR /usr/local/src/app
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
@@ -9,4 +15,4 @@ RUN pip install -r requirements.txt
 COPY . .
 RUN pip install .
 
-CMD ["smoothness_error", "--help"]
+CMD ["commandname", "--help"]

@@ -12,11 +12,18 @@ __version__ = __pkg.version
 
 
 DISPLAY_TITLE = r"""
-ChRIS Plugin Template Title
+       _                                  _   _                                                        
+      | |                                | | | |                                                       
+ _ __ | |______ ___ _ __ ___   ___   ___ | |_| |__  _ __   ___  ___ ___ ______ ___ _ __ _ __ ___  _ __ 
+| '_ \| |______/ __| '_ ` _ \ / _ \ / _ \| __| '_ \| '_ \ / _ \/ __/ __|______/ _ \ '__| '__/ _ \| '__|
+| |_) | |      \__ \ | | | | | (_) | (_) | |_| | | | | | |  __/\__ \__ \     |  __/ |  | | | (_) | |   
+| .__/|_|      |___/_| |_| |_|\___/ \___/ \__|_| |_|_| |_|\___||___/___/      \___|_|  |_|  \___/|_|   
+| |                                                                                                    
+|_|                                                                                                    
 """
 
 
-parser = ArgumentParser(description='cli description',
+parser = ArgumentParser(description='Calculate smoothness error (difference in curvature between neighbor vertices) for surfaces.',
                         formatter_class=ArgumentDefaultsHelpFormatter)
 parser.add_argument('-e', '--example', default='jelly',
                     help='argument which does not do anything')
@@ -27,7 +34,7 @@ parser.add_argument('-V', '--version', action='version',
 # documentation: https://fnndsc.github.io/chris_plugin/chris_plugin.html#chris_plugin
 @chris_plugin(
     parser=parser,
-    title='My ChRIS plugin',
+    title='Surface Smoothness Error',
     category='',                 # ref. https://chrisstore.co/plugins
     min_memory_limit='100Mi',    # supported units: Mi, Gi
     min_cpu_limit='1000m',       # millicores, e.g. "1000m" = 1 CPU core

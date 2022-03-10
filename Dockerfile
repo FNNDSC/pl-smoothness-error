@@ -4,10 +4,10 @@
 FROM docker.io/python:3.10.2-slim-buster
 
 LABEL org.opencontainers.image.authors="FNNDSC <dev@babyMRI.org>" \
-      org.opencontainers.image.title="ChRIS Plugin Title" \
-      org.opencontainers.image.description="A ChRIS plugin that..."
+      org.opencontainers.image.title="Surface Smoothness Error" \
+      org.opencontainers.image.description="A ChRIS plugin to calculate smoothness error (difference in curvature between neighbor vertices) for surfaces."
 
-WORKDIR /usr/local/src/app
+WORKDIR /usr/local/src/pl-smoothness-error
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
@@ -15,4 +15,4 @@ RUN pip install -r requirements.txt
 COPY . .
 RUN pip install .
 
-CMD ["commandname", "--help"]
+CMD ["smtherr", "--help"]

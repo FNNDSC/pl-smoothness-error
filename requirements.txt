@@ -1,5 +1,5 @@
-chris_plugin~=0.0.14
-pybicpl~=0.3.1
+chris_plugin==0.0.17
+pybicpl==0.3.1
 loguru~=0.6.0
 
 # You should install numpy using conda for better support on non-x86_64

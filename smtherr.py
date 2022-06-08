@@ -59,7 +59,7 @@ def main(options: Namespace, inputdir: Path, outputdir: Path):
     else:
         print(DISPLAY_TITLE, file=sys.stderr, flush=True)
 
-    mapper = PathMapper(inputdir, outputdir, glob=options.pattern, suffix=options.output_suffix)
+    mapper = PathMapper.file_mapper(inputdir, outputdir, glob=options.pattern, suffix=options.output_suffix)
 
     nproc = len(os.sched_getaffinity(0))
     logger.debug('Using {} threads.', nproc)

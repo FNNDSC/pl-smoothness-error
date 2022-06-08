@@ -94,7 +94,7 @@ jobs:
             docker.io/${{ steps.determine.outputs.dock_image }}
             ghcr.io/${{ steps.determine.outputs.dock_image }}
           # if non-x86_84 architectures are supported, add them here
-          platforms: linux/amd64  #,linux/arm64,linux/ppc64le
+          platforms: linux/amd64,linux/arm64,linux/ppc64le
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
@@ -119,7 +119,7 @@ jobs:
           repository: ${{ steps.determine.outputs.repo }}
 
       - name: Upload to ChRIS Store
-        if: "github.event_name == 'release' && !endsWith(steps.determine.outputs.dock_image, ':latest')"
+        if: github.event_name == 'release'
         uses: FNNDSC/chrisstore-action@master
         with:
           descriptor_file: /tmp/description.json

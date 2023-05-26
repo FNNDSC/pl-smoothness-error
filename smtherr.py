@@ -3,7 +3,6 @@ import os
 import sys
 from pathlib import Path
 from argparse import ArgumentParser, Namespace, ArgumentDefaultsHelpFormatter
-from importlib.metadata import Distribution
 from tempfile import NamedTemporaryFile
 import subprocess as sp
 from concurrent.futures import ThreadPoolExecutor
@@ -14,8 +13,7 @@ from chris_plugin import chris_plugin, PathMapper
 from bicpl.obj import PolygonObj
 from bicpl.math import difference_average
 
-__pkg = Distribution.from_name(__package__)
-__version__ = __pkg.version
+__version__ = '2.0.2'
 
 
 DISPLAY_TITLE = r"""

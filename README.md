@@ -92,7 +92,7 @@ Mount the source code `smtherr.py` into a container to test changes without rebu
 
 ```shell
 docker run --rm -it --userns=host -u $(id -u):$(id -g) \
-    -v $PWD/smtherr.py:/usr/local/lib/python3.10/site-packages/smtherr.py:ro \
+    -v $PWD/smtherr.py:/usr/local/lib/python3.11/site-packages/smtherr.py:ro \
     -v $PWD/in:/incoming:ro -v $PWD/out:/outgoing:rw -w /outgoing \
     localhost/fnndsc/pl-smoothness-error smtherr /incoming /outgoing
 ```
